@@ -1,0 +1,1 @@
+ALTER TABLE "users" ALTER COLUMN "user_role" SET DEFAULT 'mechanic';

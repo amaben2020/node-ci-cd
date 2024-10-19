@@ -25,9 +25,13 @@ export const confirmSignup = async (req, res) => {
     if (!userHasRegistered.length) {
       throw new MechalinkAlreadyExists(`User with ${username} does not exist`);
     } else {
-      confirmUserSignup(username, code);
-
-      res.status(201).json({ message: 'Success' });
+      if (userHasRegistered[0].firstName === username) {
+        // todo : move logic inside confirmSignup after you extract into core
+        confirmUserSignup(username, code);
+        res.status(201).json({ message: 'Success' });
+      } else {
+        res.status(403).send('Incorrect code');
+      }
     }
   } catch (error) {
     const validationError = fromError(error);

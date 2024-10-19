@@ -9,9 +9,9 @@ import {
   doublePrecision,
   boolean,
 } from 'drizzle-orm/pg-core';
-import { jobRequests } from './jobRequest';
-import { JobStatuses } from '@/constants/constants';
-import { mechanics } from './mechanic';
+import { jobRequests } from './jobRequest.js';
+import { JobStatuses } from './../../constants/constants.js';
+import { mechanics } from './mechanic.js';
 
 export const jobs = pgTable('jobs', {
   id: bigserial('id', { mode: 'number' }).primaryKey(),

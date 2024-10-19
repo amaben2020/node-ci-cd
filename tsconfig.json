@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2020", // or ESNext
+    "module": "NodeNext", // Ensure you're using ES modules
+    "moduleResolution": "nodenext", // Use Node.js-style resolution
+    "esModuleInterop": true, // Interop between CommonJS and ES modules
+    "skipLibCheck": true, // Ignore type-checking for modules
+    "resolveJsonModule": true, // Allows importing .json files
+    "strict": true, // Enables strict type-checking
+    "baseUrl": ".", // Set the base URL for module resolution
+    "paths": {
+      // (Optional) Set custom module aliases if needed
+      "drizzle-orm/pg-core": ["node_modules/drizzle-orm/pg-core"]
+    },
+    "allowJs": true, // Allows JavaScript files
+    "checkJs": false
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}

@@ -49,6 +49,8 @@ export const signup = async (req, res) => {
       .where(eq(usersTable.email, email))
       .execute();
 
+    console.log('userHasRegistered', userHasRegistered);
+
     if (userHasRegistered.length > 0) {
       res.status(403).send(`User with ${email} already exists`);
       throw new MechalinkAlreadyExists(`User with ${email} already exists`);
@@ -79,7 +81,7 @@ export const signup = async (req, res) => {
     res.json({ user });
   } catch (error) {
     const validationError = fromError(error);
-
+    console.log(error);
     res.status(500).send(validationError.toString());
   }
 };

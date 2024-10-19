@@ -22,3 +22,9 @@ export const MechanicStatuses = {
   DECLINED: 'OUT_OF_SERVICE',
   BANNED: 'BANNED',
 };
+
+export const UserRoles = {
+  client: 'client',
+  mechanic: 'mechanic',
+  admin: 'admin',
+};
